@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список аниме</title>
+    <link rel="stylesheet" href="{% static 'anime_list.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">Syntax-Anime</a>
+            <nav>
+                <a href="/" class="nav-link">Главная</a>
+                <a href="{% url 'anime_list' %}" class="nav-link active">Все аниме</a>
+                <a href="{% url 'login' %}" class="nav-link">Личный кабинет</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="anime-list-section">
+        <h1 class="section-title">Все аниме на сайте</h1>
+
+        <div class="anime-search-container">
+            <input type="text" id="anime-search" placeholder="Поиск аниме..." class="anime-search">
+        </div>
+
+        <div class="anime-list">
+            {% for anime in animes %}
+                <div class="anime-item">
+                    <img src="{{ anime.image.url }}" alt="{{ anime.title }}" class="anime-image">
+                    <div class="anime-info">
+                        <h3>{{ anime.title }}</h3>
+                        <p>{{ anime.description|truncatechars:150 }}</p>
+                        <a href="{% url 'anime_detail' anime.id %}" class="more-btn">Смотреть</a>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="no-animes">Нет аниме для отображения</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer>
+        <p>Syntax-Anime - все права защищены</p>
+    </footer>
+</body>
+
+</html>

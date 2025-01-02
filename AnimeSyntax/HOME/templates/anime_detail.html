@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ anime.title }}</title>
+    <link rel="stylesheet" href="{% static 'anime_detail.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="header-buttons">
+            <a href="{% url 'anime_list' %}" class="button">Назад</a>
+            <a href="{% url 'profile' %}" class="button">Личный кабинет</a>
+        </div>
+    </header>
+    <main class="content">
+        <div class="anime-container">
+            <div class="anime-info">
+                <div class="anime-poster-container">
+                    {% if anime.image %}
+                        <img src="{{ anime.image.url }}" alt="{{ anime.title }}" class="anime-poster">
+                    {% else %}
+                        <img src="{% static 'default_poster.jpg' %}" alt="Нет постера" class="anime-poster">
+                    {% endif %}
+                </div>
+                <div class="anime-details">
+                    <h1>{{ anime.title }}</h1>
+                    <p>{{ anime.description }}</p>
+                    <p>Студия > {{ anime.anime_studio }}</p>
+                    <p>Жанр > {{ anime.genre }}</p>
+                    <p>Возрастные ограничения > {{ anime.age_rating }}</p>
+                    <p>MPAA рейтинг > {{ anime.MPAA_rating }}</p>
+                    {% if anime.is_ongoing %}
+                        <p class="status ongoing">Статус > Онгоинг</p>
+                    {% else %}
+                        <p class="status completed">Статус > Завершено</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="player-container">
+                <iframe src="{{anime.kodik_id}}" width="1000" height="600" frameborder="0" allowfullscreen allow="autoplay *; fullscreen *"></iframe>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

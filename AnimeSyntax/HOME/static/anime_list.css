@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+
+header {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff4c00;
+    text-decoration: none;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav a:hover, .nav-link.active {
+    color: #ff4c00;
+}
+
+
+.anime-list-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff4c00;
+}
+
+
+.anime-search-container {
+    margin-bottom: 30px;
+}
+
+.anime-search {
+    padding: 10px;
+    width: 60%;
+    font-size: 1.1rem;
+    border: 2px solid #ff4c00;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #fff;
+    outline: none;
+}
+
+.anime-search::placeholder {
+    color: #b5b5b5;
+}
+
+
+.anime-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.anime-item {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.anime-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.anime-image {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.anime-info h3 {
+    font-size: 1.2rem;
+    color: #ff4c00;
+    margin-top: 15px;
+}
+
+.anime-info p {
+    font-size: 0.9rem;
+    color: #b5b5b5;
+    margin: 10px 0;
+}
+
+.more-btn {
+    color: #00c0ff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.more-btn:hover {
+    color: #ff4c00;
+}
+
+
+.no-animes {
+    color: #ff4c00;
+    font-size: 1.2rem;
+}
+
+
+footer {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+    color: #b5b5b5;
+}
+
+
+@media (max-width: 768px) {
+    .anime-search {
+        width: 80%;
+    }
+}

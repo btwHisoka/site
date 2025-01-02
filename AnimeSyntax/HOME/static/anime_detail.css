@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    scrollbar-width: 0;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: #1a1a1a;
+    padding: 25px 20px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.header-buttons .button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    background-color: #ff4c00;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.header-buttons .button:hover {
+    background-color: #ff8000;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.anime-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.anime-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.anime-poster-container {
+    width: 300px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.anime-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.anime-details {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.anime-details h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.anime-details p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 5px 10px;
+    border-left: 3px solid #ff4c00;
+    background-color: #1e1e1e;
+    border-radius: 5px;
+}
+
+.anime-details .status {
+    font-weight: bold;
+    color: green;
+}
+
+.anime-details .status.completed {
+    color: red;
+}
+
+.player-container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

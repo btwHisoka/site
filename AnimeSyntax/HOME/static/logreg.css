@@ -1,0 +1,91 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Форма регистрации/входа */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    width: 300px;
+}
+
+/* Стили для отдельных полей формы */
+.form-field {
+    margin: 10px 0;
+}
+
+/* Поля ввода */
+form input {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ff4c00;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* Кнопка */
+form button {
+    padding: 10px;
+    background-color: #ff4c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Кнопка при наведении */
+form button:hover {
+    background-color: #ff8000;
+}
+
+/* Ссылки */
+a {
+    color: #00c0ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff4c00;
+}
+
+/* Стиль для заголовка */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Ошибки */
+.error-list {
+    color: red;
+    padding-left: 20px;
+    list-style-type: none;
+    font-size: 0.9rem;
+}
+
+.error-list li {
+    margin: 5px 0;
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+}

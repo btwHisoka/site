@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntax-Anime - Главная</title>
+    <link rel="stylesheet" href="{% static 'home_page.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать на Syntax-Anime</h1>
+        <div class="header-links">
+            <a href="{% url 'anime_list' %}" class="header-btn">Все аниме</a>
+            <a href="{% url 'login' %}" class="header-btn">Личный кабинет</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="recent-anime">
+            <h2>Недавно добавленные аниме</h2>
+            <div class="anime-slider">
+                {% for anime in recent_animes %}
+                    <div class="anime-item">
+                        <a href="{% url 'anime_detail' anime.id %}">
+                            <img src="{{ anime.image.url }}" alt="{{ anime.title }}" class="anime-poster">
+                        </a>
+                        <h3>{{ anime.title }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; Syntax-Anime - все права защищены
+    </footer>
+</body>
+</html>
